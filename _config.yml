@@ -1,11 +1,57 @@
-lsi: false
-safe: true
-source: /
+# Welcome to Jekyll!
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Yuuichi Akagawa developer note
+lang: ja
+#email: your-email@example.com
+description: >
+  USBH_MIDI, MIDI to Sync, APLINKS for Win32
+
+#baseurl: "" # the subpath of your site, e.g. /blog
+#url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
 theme: minima
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+#  - jekyll-seo-tag
+
+# Theme-specific settings
+
+header_pages:
+  - PC-E500.md
+#  - about.md
+
+minima:
+  skin: dark
+
+  # Minima date format.
+  # The default value is "%b %d, %Y" (e.g. Nov 14, 2023) 
+  # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
+  #date_format: "%b-%d-%Y"
+
+  # Generate social links in footer.
+  social_links:
+    - { platform: github,         user_url: "https://github.com/YuuichiAkagawa" }
+    - { platform: x,              user_url: "https://x.com/YuuichiAkagawa" }
+    - { platform: youtube,        user_url: "https://www.youtube.com/@YuuichiAkagawa" }
+  #  - { platform: devto,          user_url: "https://dev.to/jekyll" }
+  #  - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
+  #  - { platform: facebook,       user_url: "https://www.facebook.com/jekyll" }
+  #  - { platform: flickr,         user_url: "https://www.flickr.com/photos/jekyll" }
+  #  - { platform: gitlab,         user_url: "https://gitlab.com/jekyll" }
+  #  - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ" }
+  #  - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
+  #  - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
+  #  - { platform: linkedin,       user_url: "https://www.linkedin.com/in/jekyll" }
+  #  - { platform: microdotblog,   user_url: "https://micro.blog/jekyll" }
+  #  - { platform: pinterest,      user_url: "https://www.pinterest.com/jekyll" }
+  #  - { platform: stackoverflow,  user_url: "https://stackoverflow.com/users/1234567/jekyll" }
+  #  - { platform: telegram,       user_url: "https://t.me/jekyll" }
+  #  - { platform: twitter,        user_url: "https://twitter.com/jekyllrb" }
