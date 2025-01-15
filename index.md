@@ -17,7 +17,10 @@ MIDIクロックメッセージを2PPQのSYNC信号に変換
 ## [USB MIDI to Sync Converter](https://github.com/YuuichiAkagawa/USBMIDItoSyncConverter)
 USB MIDIのクロックメッセージをSYNC信号に変換
 
-## [APLINKS for Win32](/APLINKSW32/)
+## [APLINKS for Win32](/pocketcom/plink/)
 近 成人氏により開発された “Pocket Link System” の サーバプログラムである “APLINKS”のWin32 GUI版
+
+## [その他ポケコンソフトウェア](/pocketcom/)
+かつて公開していたポケコン関連ソフトウェア
 
 ----

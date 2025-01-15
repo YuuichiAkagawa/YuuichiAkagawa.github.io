@@ -1,9 +1,9 @@
 ---
 layout: page
 title: APLINKS for Win32
-permalink: /APLINKSW32/
+permalink: /pocketcom/plink/
 ---
-![logo](/assets/images/APLINKSW32logo.gif) [ダウンロード](/assets/aplinksw32-1.01.exe) / [download(en)](/assets/aplinksw32-1.02e.exe)
+![logo](/assets/images/APLINKSW32logo.gif) [ダウンロード](/assets/softlib/aplinksw32-1.01.exe) / [download(en)](/assets/softlib/aplinksw32-1.02e.exe)
 ### 概要
 近 成人氏により開発された "Pocket Link System" の サーバプログラムである "APLINKS"のWin32 GUI版です。  
 Win32 GUI版の特徴
@@ -80,24 +80,10 @@ Ver.0.01  1996.05.11  β１リリース
 |Windows 8.1 (32bit)      |--- |6.3.9600  |Ja  |
 |Windows 10 (32bit)	      |TP  |6.4.9841  |En  |
 |Windows 10 Pro(64bit)    |20H2|19042.746 |Ja  |
-|Windows 11 Pro(64bit)    |22H2|22621.3737|Ja  |
+|Windows 11 Pro(64bit)    |21H2|22000.194 |Ja  |
+|                         |22H2|22621.3737|Ja  |
 |                         |23H2|22631.4602|Ja  |
 
 ---
-### 著作権
-APLINKS for Win32 Version 1.01  
-　Copyright(C)1996-97 Y.Akagawa 
-
-Original version copyright  
-　Another pocket link server for NEW-SC Ver.1.03 
-　Copyright(C)1992,93 N.Kon 
-
-　このソフトウェアの著作権は赤川 裕一および近 成人が保持します。 
-　個人使用の範囲内であれば複製，改変は自由です。 
-　配布転載は一切の改変，アーカイブの変更をせず、営利を目的とせず、作者の著作権を侵害しなければ自由に行って結構です。 
-　会社名、製品名は各社の商標または登録商標です。 
-
-### 免責
-　作者は、本ソフトウェアの動作について一切保証しません。 
-　作者は、本ソフトウェアの使用に際し生じたいかなる損害に対し一切の責任を負わないものとします。 
-　作者は、本ソフトウェアにバグ等が発見された場合でもその対処を行う義務を負わないものとします。 
+### お問い合わせについて
+README.TXTに記載の連絡先は存在しないため、Xまでお願いします。
