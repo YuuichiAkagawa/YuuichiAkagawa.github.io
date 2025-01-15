@@ -3,7 +3,7 @@ layout: page
 title: APLINKS for Win32
 permalink: /pocketcom/plink/
 ---
-![logo](/assets/images/APLINKSW32logo.gif) [ダウンロード](/assets/softlib/aplinksw32-1.01.exe) / [download(en)](/assets/softlib/aplinksw32-1.02e.exe)
+![logo](/assets/images/APLINKSW32logo.gif) [ダウンロード](/assets/softlib/aplinksw32-1.01.zip) / [download(en)](/assets/softlib/aplinksw32-1.02e.zip)
 ### 概要
 近 成人氏により開発された "Pocket Link System" の サーバプログラムである "APLINKS"のWin32 GUI版です。  
 Win32 GUI版の特徴
