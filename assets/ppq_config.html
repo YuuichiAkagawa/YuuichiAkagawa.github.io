@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>MIDI to Sync Converter PPQ変更ツール</title>
+  <style>
+    body {
+      color: #c0c0c0;
+      background-color: #000000;
+    }
+    .small {
+      font-size: small;
+    }
+    ol {
+      margin-block-start: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>MIDI to Sync Converter PPQ変更ツール</h1>
+  <p>
+  <label for="midi-interface">MIDI Interface:</label>
+  <select id="midi-interface"></select>
+  </p>
+  <p>
+  <label for="sysex-message">設定値:</label>
+  <select id="sysex-message">
+    <option value="0">1PPQ</option>
+    <option value="1">2PPQ</option>
+    <option value="2">3PPQ</option>
+    <option value="3">4PPQ</option>
+    <option value="4">6PPQ</option>
+    <option value="5">8PPQ</option>
+    <option value="6">12PPQ</option>
+    <option value="7">24PPQ</option>
+    <option value="8">5ms</option>
+    <option value="9">15ms</option>
+  </select>
+  <button id="send-button">送信</button>
+  </p>
+  <hr>
+  <div class="small">
+  使用方法
+  <ol>
+    <li>「MIDI デバイスの操作と再プログラム」の許可を求められるので「許可する」をクリック</li>
+    <li>MIDI Interface:でMIDI to Sync Converterが接続されているMIDIポートを選択</li>
+    <li>設定値から希望のPPQを選択</li>
+    <li>送信ボタンをクリック</li>
+  </ol>
+  注意：<br>
+  　正しいMIDIインターフェイスを指定してください。<br>
+  　Google ChromeとEdgeでのみ動作を確認しています。iOSでは動作しません。
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const midiInterfaceSelect = document.getElementById('midi-interface');
+      const sysexMessageSelect = document.getElementById('sysex-message');
+      const sendButton = document.getElementById('send-button');
+
+      const sysexMessages = [
+        [0xF0, 0x7E, 0x49, 0x0B, 0x02, 0x01, 0xF7], //  1PPQ
+        [0xF0, 0x7E, 0x49, 0x0B, 0x02, 0x02, 0xF7], //  2PPQ
+        [0xF0, 0x7E, 0x49, 0x0B, 0x02, 0x03, 0xF7], //  3PPQ
+        [0xF0, 0x7E, 0x49, 0x0B, 0x02, 0x04, 0xF7], //  4PPQ
+        [0xF0, 0x7E, 0x49, 0x0B, 0x02, 0x06, 0xF7], //  6PPQ
+        [0xF0, 0x7E, 0x49, 0x0B, 0x02, 0x08, 0xF7], //  8PPQ
+        [0xF0, 0x7E, 0x49, 0x0B, 0x02, 0x0C, 0xF7], // 12PPQ
+        [0xF0, 0x7E, 0x49, 0x0B, 0x02, 0x18, 0xF7], // 24PPQ
+        [0xF0, 0x7E, 0x49, 0x0B, 0x02, 0x3F, 0xF7], // Plus width  5ms
+        [0xF0, 0x7E, 0x49, 0x0B, 0x02, 0x5F, 0xF7]  // Plus width 15ms
+      ];
+
+      navigator.requestMIDIAccess({ sysex: true })
+        .then(access => {
+          const outputs = access.outputs;
+
+          outputs.forEach(output => {
+            const option = document.createElement('option');
+            option.value = output.id;
+            option.text = output.name;
+            midiInterfaceSelect.appendChild(option);
+          });
+
+          sendButton.addEventListener('click', () => {
+            const selectedInterfaceId = midiInterfaceSelect.value;
+            const selectedMessageIndex = parseInt(sysexMessageSelect.value);
+            const selectedMessage = sysexMessages[selectedMessageIndex];
+
+            const output = access.outputs.get(selectedInterfaceId);
+            if (output) {
+              output.send(selectedMessage);
+              console.log('SysEx message sent:', selectedMessage);
+            } else {
+              console.error('Selected MIDI interface not found.');
+            }
+          });
+        })
+        .catch(error => {
+          console.error('Error accessing MIDI devices:', error);
+        });
+    });
+  </script>
+</body>
+</html>
